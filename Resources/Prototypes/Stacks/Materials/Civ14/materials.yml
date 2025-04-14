@@ -38,7 +38,7 @@
   name: stone
   icon: { sprite: /Textures/Objects/Materials/materials.rsi, state: stone }
   spawn: MaterialStone1
-  maxCount: 20
+  maxCount: 25
 
 - type: stack
   id: Sandstone
