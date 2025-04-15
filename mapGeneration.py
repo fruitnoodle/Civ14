@@ -869,6 +869,19 @@ MAP_CONFIG = [
         "priority": 10,
         "seed_key": "river_noise",
     },
+    {  # Deep River Water (in the middle)
+        "type": "BiomeEntityLayer",
+        "entity_protos": "FloorWaterDeepEntity",  # The deep water entity
+        "noise_type": NoiseType.NoiseType_OpenSimplex2,  # Same noise type as river
+        "octaves": 1,  # Same octaves as river
+        "fractal_lacunarity": 1.50,  # Same lacunarity as river
+        "frequency": 0.003,  # Same frequency as river
+        "fractal_type": FractalType.FractalType_Ridged,  # Same fractal type as river
+        "threshold": 0.975,  # HIGHER threshold than river (adjust if needed)
+        "tile_condition": lambda tile: True,  # Place wherever noise is high enough
+        "priority": 11,  # HIGHER priority than river (to overwrite)
+        "seed_key": "river_noise",  # MUST use the same noise seed as river
+    },
     {  # River sand
         "type": "BiomeTileLayer",
         "tile_type": "FloorSand",
