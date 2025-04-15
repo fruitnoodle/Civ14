@@ -27,6 +27,9 @@
           - Sheet
           - RawMaterial
           - Ingot
+    - type: Construction
+      graph: FletchersWorkstation
+      node: end
 
 - type: latheCategory
   id: Fletcher

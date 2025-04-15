@@ -33,6 +33,9 @@
       runningState: stone_kiln_on
       staticPacks:
         - StoneKiln
+    - type: Construction
+      graph: StoneKiln
+      node: end
 
 - type: latheRecipePack
   id: StoneKiln
@@ -120,6 +123,9 @@
       runningState: bloomery_on
       staticPacks:
         - Bloomery
+    - type: Construction
+      graph: Bloomery
+      node: end
 
 - type: latheRecipePack
   id: Bloomery

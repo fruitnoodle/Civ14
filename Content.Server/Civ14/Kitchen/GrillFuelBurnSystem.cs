@@ -26,8 +26,6 @@ public sealed class GrillFuelBurnSystem : EntitySystem
 
     [Dependency] private readonly SharedPointLightSystem _pointLightSystem = default!;
 
-    private readonly Dictionary<EntityUid, float> _remainingBurnTime = new();
-
     public override void Initialize()
     {
         base.Initialize();
@@ -39,7 +37,6 @@ public sealed class GrillFuelBurnSystem : EntitySystem
 
     private void OnMapInit(EntityUid uid, GrillFuelBurnComponent component, MapInitEvent args)
     {
-        _remainingBurnTime[uid] = component.Fuel * 2f * 60f;
         component.IsLit = false;
     }
 
@@ -52,7 +49,7 @@ public sealed class GrillFuelBurnSystem : EntitySystem
     {
         if (_entityManager.TryGetComponent<IgnitionSourceComponent>(args.Used, out var ignitionSource))
         {
-            if (!comp.IsLit && ignitionSource.Ignited && _remainingBurnTime[uid] > 0)
+            if (!comp.IsLit && ignitionSource.Ignited && comp.Fuel > 0)
             {
                 comp.IsLit = true;
                 AdjustHeaterSetting(uid, comp);
@@ -77,10 +74,8 @@ public sealed class GrillFuelBurnSystem : EntitySystem
 
             if (fuelToAdd > 0)
             {
-                comp.Fuel += fuelToAdd;
-                _remainingBurnTime[uid] += fuelToAdd * burnFuel.BurnTime * 60f;
+                comp.Fuel += fuelToAdd * burnFuel.BurnTime;
                 _stackSystem.SetCount(args.Used, stackComp.Count - (int)fuelToAdd, stackComp);
-
                 if (stackComp.Count <= 0)
                 {
                     QueueDel(args.Used);
@@ -94,8 +89,7 @@ public sealed class GrillFuelBurnSystem : EntitySystem
         {
             if (comp.Fuel < comp.MaxFuel)
             {
-                comp.Fuel++;
-                _remainingBurnTime[uid] += burnFuel.BurnTime * 60f;
+                comp.Fuel += burnFuel.BurnTime;
                 QueueDel(args.Used);
                 AdjustHeaterSetting(uid, comp);
                 args.Handled = true;
@@ -110,9 +104,8 @@ public sealed class GrillFuelBurnSystem : EntitySystem
         {
             if (comp.IsLit)
             {
-                if (comp.Fuel <= 0 || _remainingBurnTime.GetValueOrDefault(uid) <= 0)
+                if (comp.Fuel <= 0)
                 {
-                    _remainingBurnTime.Remove(uid);
                     comp.IsLit = false;
                     AdjustHeaterSetting(uid, comp);
                     if (comp.Expends == true)
@@ -124,8 +117,7 @@ public sealed class GrillFuelBurnSystem : EntitySystem
                     continue;
                 }
 
-                _remainingBurnTime[uid] -= deltaTime;
-                comp.Fuel -= deltaTime/60f;
+                comp.Fuel -= deltaTime / 60f;
                 AdjustHeaterSetting(uid, comp);
 
                 if (comp.Setting != EntityHeaterSetting.Off)
@@ -145,7 +137,7 @@ public sealed class GrillFuelBurnSystem : EntitySystem
         if (!args.IsInDetailsRange)
             return;
 
-        var remainingTime = _remainingBurnTime.GetValueOrDefault(uid) / 60f;
+        var remainingTime = comp.Fuel;
         args.PushMarkup($"Has approximately {remainingTime:F1} minutes of fuel remaining.");
     }
 
@@ -198,7 +190,7 @@ public sealed class GrillFuelBurnSystem : EntitySystem
             return;
         }
 
-        var remainingTimeSeconds = _remainingBurnTime.GetValueOrDefault(uid);
+        var remainingTimeSeconds = comp.Fuel * 60f;
         EntityHeaterSetting newSetting;
 
         if (remainingTimeSeconds > 600f) // > 10 minutes

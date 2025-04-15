@@ -27,6 +27,9 @@
         tags:
           - Sheet
           - Ingot
+    - type: Construction
+      graph: AnvilStone
+      node: end
 
 - type: latheCategory
   id: AnvilBronze
