@@ -83,8 +83,8 @@
             - !type:SpawnEntitiesBehavior
               spawn:
                 MaterialWoodPlank1:
-                  min: 4
-                  max: 5
+                  min: 7
+                  max: 8
     - type: TreeBranches
 
 - type: entity

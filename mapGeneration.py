@@ -850,7 +850,7 @@ MAP_CONFIG = [
         "octaves": 6,
         "frequency": 0.3,
         "fractal_type": FractalType.FractalType_FBm,
-        "threshold": 0.84,
+        "threshold": 0.78,
         "tile_condition": lambda tile: tile in [TILEMAP_REVERSE["FloorPlanetGrass"]],
         "priority": 1,
     },
