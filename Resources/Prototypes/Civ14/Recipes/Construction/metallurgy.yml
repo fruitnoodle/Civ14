@@ -61,7 +61,7 @@
     - !type:TileNotBlocked
 
 - type: constructionGraph
-  id: StoneAnvil
+  id: AnvilStone
   start: start
   graph:
     - node: start
@@ -72,7 +72,7 @@
               amount: 20
               doAfter: 15
     - node: end
-      entity: StoneAnvil
+      entity: AnvilStone
 
 - type: construction
   name: stone anvil

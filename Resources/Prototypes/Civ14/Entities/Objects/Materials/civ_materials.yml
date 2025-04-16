@@ -22,6 +22,9 @@
     - type: Tag
       tags:
         - RawMaterial
+        - Burnable
+    - type: BurnFuel
+      burnTime: 1
 
 - type: entity
   parent: MaterialStraw

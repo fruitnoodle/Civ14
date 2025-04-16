@@ -184,6 +184,9 @@
   id: Burnt
 
 - type: Tag
+  id: Burnable
+
+- type: Tag
   id: Bun
 
 - type: Tag

@@ -320,6 +320,9 @@
     - type: Sprite
       state: coal
     - type: Material
+    - type: Tag
+      tags:
+        - Burnable
     - type: Extractable
       grindableSolutionName: coal
     - type: SolutionContainerManager
