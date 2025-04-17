@@ -22,6 +22,8 @@
       staticPacks:
         - AnvilBronze
         - AnvilGold
+        - AnvilSwordsAncient
+        - AnvilShieldsAncient
     - type: MaterialStorage
       whitelist:
         tags:
