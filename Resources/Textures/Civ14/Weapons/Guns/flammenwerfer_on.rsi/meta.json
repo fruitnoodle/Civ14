@@ -8,15 +8,10 @@
   },
   "states": [
     {
+      "name": "mag-0"
+    },
+    {
       "name": "flammenwerfer_on",
-      "delays": [
-        [
-          0.1,
-          0.1,
-          0.1,
-          0.1
-        ]
-      ],
       "directions": 4
     },
     {

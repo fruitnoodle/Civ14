@@ -8,11 +8,22 @@
   },
   "states": [
     {
-      "name": "mg3hmg",
+      "name": "mag-0"
+    },
+    {
+      "name": "empty",
       "directions": 4
     },
     {
       "name": "icon",
+      "directions": 4
+    },
+    {
+      "name": "mg3hmg",
+      "directions": 4
+    },
+    {
+      "name": "open",
       "directions": 4
     }
   ]

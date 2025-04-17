@@ -8,11 +8,22 @@
   },
   "states": [
     {
-      "name": "maxim_ww2",
+      "name": "mag-0"
+    },
+    {
+      "name": "empty",
       "directions": 4
     },
     {
       "name": "icon",
+      "directions": 4
+    },
+    {
+      "name": "maxim_ww2",
+      "directions": 4
+    },
+    {
+      "name": "open",
       "directions": 4
     }
   ]

@@ -1,14 +1,17 @@
 {
   "version": 1,
-  "license": null,
-  "copyright": null,
+  "license": "AGPL-3.0",
+  "copyright": "Exported from https://github.com/civ13/civ13",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
     {
-      "name": "aks74u_folded",
+      "name": "mag-0"
+    },
+    {
+      "name": "folded",
       "directions": 1
     },
     {
@@ -22,10 +25,6 @@
     {
       "name": "inhand-right",
       "directions": 4
-    },
-    {
-      "name": "folded",
-      "directions": 1
     }
   ]
 }

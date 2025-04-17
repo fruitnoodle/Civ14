@@ -8,11 +8,14 @@
   },
   "states": [
     {
-      "name": "lpo_flamethrower",
-      "directions": 1
+      "name": "mag-0"
     },
     {
       "name": "icon",
+      "directions": 1
+    },
+    {
+      "name": "lpo_flamethrower",
       "directions": 1
     }
   ]

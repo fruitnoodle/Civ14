@@ -8,11 +8,22 @@
   },
   "states": [
     {
-      "name": "kornet_atgm",
+      "name": "mag-0"
+    },
+    {
+      "name": "empty",
       "directions": 4
     },
     {
       "name": "icon",
+      "directions": 4
+    },
+    {
+      "name": "kornet_atgm",
+      "directions": 4
+    },
+    {
+      "name": "open",
       "directions": 4
     }
   ]

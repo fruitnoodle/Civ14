@@ -8,11 +8,22 @@
   },
   "states": [
     {
-      "name": "winchester1895_repeater",
+      "name": "mag-0"
+    },
+    {
+      "name": "empty",
       "directions": 1
     },
     {
       "name": "icon",
+      "directions": 1
+    },
+    {
+      "name": "open",
+      "directions": 1
+    },
+    {
+      "name": "winchester1895_repeater",
       "directions": 1
     }
   ]

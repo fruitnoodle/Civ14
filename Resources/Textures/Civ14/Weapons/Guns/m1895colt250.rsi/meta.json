@@ -8,11 +8,14 @@
   },
   "states": [
     {
-      "name": "m1895colt250",
-      "directions": 4
+      "name": "mag-0"
     },
     {
       "name": "icon",
+      "directions": 4
+    },
+    {
+      "name": "m1895colt250",
       "directions": 4
     }
   ]

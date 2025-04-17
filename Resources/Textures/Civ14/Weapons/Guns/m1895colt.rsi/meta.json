@@ -8,11 +8,22 @@
   },
   "states": [
     {
-      "name": "m1895colt",
+      "name": "mag-0"
+    },
+    {
+      "name": "empty",
       "directions": 4
     },
     {
       "name": "icon",
+      "directions": 4
+    },
+    {
+      "name": "m1895colt",
+      "directions": 4
+    },
+    {
+      "name": "open",
       "directions": 4
     }
   ]

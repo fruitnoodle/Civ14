@@ -8,6 +8,9 @@
   },
   "states": [
     {
+      "name": "mag-0"
+    },
+    {
       "name": "flintlock__duelingpistol_cocked",
       "directions": 1
     },

@@ -8,11 +8,22 @@
   },
   "states": [
     {
-      "name": "marlin1888_carbine",
+      "name": "mag-0"
+    },
+    {
+      "name": "empty",
       "directions": 1
     },
     {
       "name": "icon",
+      "directions": 1
+    },
+    {
+      "name": "marlin1888_carbine",
+      "directions": 1
+    },
+    {
+      "name": "open",
       "directions": 1
     }
   ]

@@ -8,38 +8,23 @@
   },
   "states": [
     {
+      "name": "mag-0"
+    },
+    {
       "name": "coaxflam",
-      "directions": 4,
-      "delays": [
-        [
-          0.1,
-          0.1,
-          0.1,
-          0.1
-        ],
-        [
-          0.1,
-          0.1,
-          0.1,
-          0.1
-        ],
-        [
-          0.1,
-          0.1,
-          0.1,
-          0.1
-        ],
-        [
-          0.1,
-          0.1,
-          0.1,
-          0.1
-        ]
-      ]
+      "directions": 1
+    },
+    {
+      "name": "empty",
+      "directions": 4
     },
     {
       "name": "icon",
       "directions": 1
+    },
+    {
+      "name": "open",
+      "directions": 4
     }
   ]
 }

@@ -8,11 +8,14 @@
   },
   "states": [
     {
-      "name": "poisonbow",
-      "directions": 1
+      "name": "mag-0"
     },
     {
       "name": "icon",
+      "directions": 1
+    },
+    {
+      "name": "poisonbow",
       "directions": 1
     }
   ]

@@ -8,19 +8,11 @@
   },
   "states": [
     {
+      "name": "mag-0"
+    },
+    {
       "name": "firebow",
-      "delays": [
-        [
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1
-        ]
-      ]
+      "directions": 1
     },
     {
       "name": "icon",

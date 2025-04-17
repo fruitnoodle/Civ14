@@ -8,11 +8,14 @@
   },
   "states": [
     {
-      "name": "tac-droid",
-      "directions": 4
+      "name": "mag-0"
     },
     {
       "name": "icon",
+      "directions": 4
+    },
+    {
+      "name": "tac-droid",
       "directions": 4
     }
   ]

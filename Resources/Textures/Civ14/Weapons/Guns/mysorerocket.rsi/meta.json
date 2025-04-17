@@ -8,11 +8,22 @@
   },
   "states": [
     {
-      "name": "mysorerocket",
+      "name": "mag-0"
+    },
+    {
+      "name": "empty",
       "directions": 1
     },
     {
       "name": "icon",
+      "directions": 1
+    },
+    {
+      "name": "mysorerocket",
+      "directions": 1
+    },
+    {
+      "name": "open",
       "directions": 1
     }
   ]

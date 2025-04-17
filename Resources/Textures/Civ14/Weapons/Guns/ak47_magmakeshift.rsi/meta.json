@@ -8,6 +8,9 @@
   },
   "states": [
     {
+      "name": "mag-0"
+    },
+    {
       "name": "ak47_magmakeshift",
       "directions": 1
     },
