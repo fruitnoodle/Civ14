@@ -23,3 +23,8 @@ health-analyzer-window-scan-mode-active = Active
 health-analyzer-window-scan-mode-inactive = Inactive
 
 health-analyzer-popup-scan-target = {CAPITALIZE(THE($user))} is trying to scan you!
+
+medbook-popup-scan-target = {CAPITALIZE(THE($user))} is trying to examine you!
+medbook-status-critical = Critical
+medbook-status-low = Low
+medbook-status-normal = Normal

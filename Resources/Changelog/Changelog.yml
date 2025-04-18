@@ -71,7 +71,7 @@ Entries:
         type: Add
       - message: Added deep water to the middle of the rivers.
         type: Add
-    id: 5
+    id: 6
     time: "2025-04-16T00:00:00.0000000+00:00"
     url: https://github.com/Civ13/Civ14/pull/118
 
@@ -85,6 +85,22 @@ Entries:
         type: Add
       - message: Wolves and Bears now drop leather as well as pelts.
         type: Fix
-    id: 5
+    id: 7
     time: "2025-04-17T00:00:00.0000000+00:00"
     url: https://github.com/Civ13/Civ14/pull/121
+
+  - author: Taislin
+    changes:
+      - message: Adds the doctor's handbook as a simplified health analyser.
+        type: Add
+      - message: Buffed bed healing rates.
+        type: Tweak
+      - message: Reduced threshold of current blood to inflict bloodloss damage.
+        type: Tweak
+      - message: Buffed healing effect from herbs.
+        type: Tweak
+      - message: Bodies now decay after a while.
+        type: Add
+    id: 8
+    time: "2025-04-18T00:00:00.0000000+00:00"
+    url: https://github.com/Civ13/Civ14/pull/123
