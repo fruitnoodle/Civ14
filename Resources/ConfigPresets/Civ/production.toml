@@ -24,7 +24,7 @@ desc = "An unofficial Civilization 14 server"
 maxplayers = 256
 lobbyduration = 60
 disallowlatejoins = false
-defaultpreset = "extended"
+defaultpreset = "nomads"
 
 [console]
 loginlocal = true

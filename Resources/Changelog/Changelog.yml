@@ -104,3 +104,12 @@ Entries:
     id: 8
     time: "2025-04-18T00:00:00.0000000+00:00"
     url: https://github.com/Civ13/Civ14/pull/123
+  - author: Taislin
+    changes:
+      - message: Adds stalker's stamina and sprinting mechanics.
+        type: Add
+      - message: Adds stalker's lay down mechanics.
+        type: Add
+    id: 9
+    time: "2025-04-19T00:00:00.0000000+00:00"
+    url: https://github.com/Civ13/Civ14/pull/124

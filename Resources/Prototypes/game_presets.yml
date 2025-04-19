@@ -1,10 +1,10 @@
 - type: gamePreset
-  id: Extended
+  id: Nomads
   alias:
     - extended
-    - shittersafari
+    - nomads
   name: extended-title
-  showInVote: false #2boring2vote
+  showInVote: true #2boring2vote
   description: extended-description
   rules:
     - RespawnDeadRule

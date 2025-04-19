@@ -95,7 +95,7 @@ public sealed partial class StaminaSystem : EntitySystem
 
         var curTime = _timing.CurTime;
         var pauseTime = _metadata.GetPauseTime(uid);
-        return MathF.Max(0f, component.StaminaDamage - MathF.Max(0f, (float) (curTime - (component.NextUpdate + pauseTime)).TotalSeconds * component.Decay));
+        return MathF.Max(0f, component.StaminaDamage - MathF.Max(0f, (float)(curTime - (component.NextUpdate + pauseTime)).TotalSeconds * component.Decay));
     }
 
     private void OnRejuvenate(EntityUid uid, StaminaComponent component, RejuvenateEvent args)
@@ -211,7 +211,7 @@ public sealed partial class StaminaSystem : EntitySystem
             return;
 
         var severity = ContentHelpers.RoundToLevels(MathF.Max(0f, component.CritThreshold - component.StaminaDamage), component.CritThreshold, 7);
-        _alerts.ShowAlert(uid, component.StaminaAlert, (short) severity);
+        _alerts.ShowAlert(uid, component.StaminaAlert, (short)severity);
     }
 
     /// <summary>
@@ -233,7 +233,8 @@ public sealed partial class StaminaSystem : EntitySystem
     }
 
     public void TakeStaminaDamage(EntityUid uid, float value, StaminaComponent? component = null,
-        EntityUid? source = null, EntityUid? with = null, bool visual = true, SoundSpecifier? sound = null)
+        EntityUid? source = null, EntityUid? with = null, bool visual = true, SoundSpecifier? sound = null,
+        bool shouldLog = true) // stalker-changes
     {
         if (!Resolve(uid, ref component, false))
             return;
@@ -259,7 +260,7 @@ public sealed partial class StaminaSystem : EntitySystem
                 component.NextUpdate = nextUpdate;
         }
 
-        var slowdownThreshold = component.CritThreshold / 2f;
+        var slowdownThreshold = component.SlowdownThreshold; // stalker-changes
 
         // If we go above n% then apply slowdown
         if (oldDamage < slowdownThreshold &&
@@ -290,11 +291,11 @@ public sealed partial class StaminaSystem : EntitySystem
 
         if (value <= 0)
             return;
-        if (source != null)
+        if (source != null && shouldLog) // stalker-changes
         {
             _adminLogger.Add(LogType.Stamina, $"{ToPrettyString(source.Value):user} caused {value} stamina damage to {ToPrettyString(uid):target}{(with != null ? $" using {ToPrettyString(with.Value):using}" : "")}");
         }
-        else
+        else if (shouldLog)  // stalker-changes
         {
             _adminLogger.Add(LogType.Stamina, $"{ToPrettyString(uid):target} took {value} stamina damage");
         }

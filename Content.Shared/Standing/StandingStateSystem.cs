@@ -15,7 +15,7 @@ namespace Content.Shared.Standing
         [Dependency] private readonly SharedPhysicsSystem _physics = default!;
 
         // If StandingCollisionLayer value is ever changed to more than one layer, the logic needs to be edited.
-        private const int StandingCollisionLayer = (int) CollisionGroup.MidImpassable;
+        private const int StandingCollisionLayer = (int)CollisionGroup.MidImpassable;
 
         public bool IsDown(EntityUid uid, StandingStateComponent? standingState = null)
         {
@@ -31,7 +31,8 @@ namespace Content.Shared.Standing
             bool force = false,
             StandingStateComponent? standingState = null,
             AppearanceComponent? appearance = null,
-            HandsComponent? hands = null)
+            HandsComponent? hands = null,
+            bool fixtureAttempt = true) //stalker changes
         {
             // TODO: This should actually log missing comps...
             if (!Resolve(uid, ref standingState, false))
@@ -63,13 +64,19 @@ namespace Content.Shared.Standing
 
             standingState.Standing = false;
             Dirty(uid, standingState);
-            RaiseLocalEvent(uid, new DownedEvent(), false);
+
+            // stalker-changes-start
+            DownedEvent downedEvent = new DownedEvent();
+            downedEvent.IgnoreLayingBulletPass = fixtureAttempt;
+
+            RaiseLocalEvent(uid, downedEvent, false);
+            //stalker-changes-end
 
             // Seemed like the best place to put it
             _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Horizontal, appearance);
 
             // Change collision masks to allow going under certain entities like flaps and tables
-            if (TryComp(uid, out FixturesComponent? fixtureComponent))
+            if (TryComp(uid, out FixturesComponent? fixtureComponent) && fixtureAttempt)
             {
                 foreach (var (key, fixture) in fixtureComponent.Fixtures)
                 {
@@ -168,5 +175,6 @@ namespace Content.Shared.Standing
     /// </summary>
     public sealed class DownedEvent : EntityEventArgs
     {
+        public bool IgnoreLayingBulletPass = true; // stalker-changes
     }
 }

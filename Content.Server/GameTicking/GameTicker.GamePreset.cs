@@ -86,7 +86,7 @@ namespace Content.Server.GameTicking
 
         private void InitializeGamePreset()
         {
-            SetGamePreset(LobbyEnabled ? _cfg.GetCVar(CCVars.GameLobbyDefaultPreset) : "extended");
+            SetGamePreset(LobbyEnabled ? _cfg.GetCVar(CCVars.GameLobbyDefaultPreset) : "nomads");
         }
 
         public void SetGamePreset(GamePresetPrototype? preset, bool force = false)
@@ -108,7 +108,7 @@ namespace Content.Server.GameTicking
         public void SetGamePreset(string preset, bool force = false)
         {
             var proto = FindGamePreset(preset);
-            if(proto != null)
+            if (proto != null)
                 SetGamePreset(proto, force);
         }
 

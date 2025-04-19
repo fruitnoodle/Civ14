@@ -31,13 +31,13 @@ public sealed partial class CCVars
     ///     Whether the arrivals shuttle is enabled.
     /// </summary>
     public static readonly CVarDef<bool> ArrivalsShuttles =
-        CVarDef.Create("shuttle.arrivals", true, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.arrivals", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     The map to use for the arrivals station.
     /// </summary>
     public static readonly CVarDef<string> ArrivalsMap =
-        CVarDef.Create("shuttle.arrivals_map", "/Maps/Misc/terminal.yml", CVar.SERVERONLY);
+        CVarDef.Create("shuttle.arrivals_map", "/Maps/civ/nomads_classic.yml", CVar.SERVERONLY);
 
     /// <summary>
     ///     Cooldown between arrivals departures. This should be longer than the FTL time or it will double cycle.
@@ -174,7 +174,7 @@ public sealed partial class CCVars
     /// </summary>
     [CVarControl(AdminFlags.Server | AdminFlags.Mapping, min: 0, max: int.MaxValue)]
     public static readonly CVarDef<int> EmergencyShuttleAutoCallTime =
-        CVarDef.Create("shuttle.auto_call_time", 90, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.auto_call_time", 0, CVar.SERVERONLY);
 
     /// <summary>
     ///     Time in minutes after the round was extended (by recalling the shuttle) to call
