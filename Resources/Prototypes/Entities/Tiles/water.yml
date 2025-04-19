@@ -128,7 +128,7 @@
   description: Shallow swampwater. You probably shouldn't drink from this.
   components:
     - type: Sprite
-      sprite: Tiles/Planet/water.rsi
+      sprite: Tiles/Planet/swamp.rsi
       drawdepth: BelowFloor
       layers:
-        - state: swamp
+        - state: full
