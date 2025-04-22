@@ -8,6 +8,7 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/assagai.rsi
+
     - type: MeleeWeapon
       damage:
         types:
@@ -15,6 +16,7 @@
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
+      heldPrefix: null
       sprite: Civ14/Weapons/assagai.rsi
     - type: DisarmMalus
     - type: Construction
@@ -28,6 +30,7 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/dory.rsi
+
     - type: MeleeWeapon
       range: 1.8
       attackRate: 0.8
@@ -39,6 +42,7 @@
     - type: STWeight
       self: 16        
     - type: Item
+      heldPrefix: null
       sprite: Civ14/Weapons/dory.rsi
     - type: DisarmMalus
     - type: Construction
@@ -52,6 +56,7 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/sarissa.rsi
+
     - type: MeleeWeapon
       attackRate: 0.6
       range: 2.1
@@ -63,6 +68,7 @@
     - type: STWeight
       self: 16        
     - type: Item
+      heldPrefix: null
       sprite: Civ14/Weapons/sarissa.rsi
     - type: DisarmMalus
     - type: Construction
@@ -77,6 +83,7 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/pike.rsi
+
     - type: MeleeWeapon
       damage:
         types:
@@ -86,6 +93,7 @@
     - type: STWeight
       self: 12     
     - type: Item
+      heldPrefix: null
       sprite: Civ14/Weapons/pike.rsi
     - type: DisarmMalus
     - type: Construction
@@ -101,6 +109,7 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/naginata.rsi
+
     - type: MeleeWeapon
       range: 1.6
       damage:
@@ -115,6 +124,7 @@
           Piercing: 5
           Slash: 2
     - type: Item
+      heldPrefix: null
       sprite: Civ14/Weapons/naginata.rsi
     - type: DisarmMalus
     - type: Construction
@@ -128,6 +138,7 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/halberd.rsi
+
     - type: MeleeWeapon
       damage:
         types:
@@ -136,6 +147,7 @@
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
+      heldPrefix: null
       sprite: Civ14/Weapons/halberd.rsi
     - type: DisarmMalus
     - type: Construction
