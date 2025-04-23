@@ -332,7 +332,7 @@
     - type: Armor
       modifiers:
         coefficients:
-           Blunt: 0.94
+          Blunt: 0.94
           Slash: 0.92
           Piercing: 0.99
           Arrow: 0.99
