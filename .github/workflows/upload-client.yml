@@ -52,7 +52,7 @@ jobs:
       - name: Update Target Repo
         run: |
           # Copy compiled output to target-repo/
-          rsync -av --ignore-existing ./bin/Content.Client/win-x64/ target-repo/Content.Client/ || true
+          rsync -av --update ./bin/Content.Client/win-x64/ target-repo/Content.Client/ || true
           cd target-repo
           cd Content.Client
           git config user.name "GitHub Action"
@@ -62,10 +62,10 @@ jobs:
           git push
           cd -
           # Copy compiled output to target-repo/
-          rsync -av --ignore-existing ./../bin/Content.Server/win-x64/ Content.Server/ || true
+          rsync -av --update ./../bin/Content.Server/win-x64/ Content.Server/ || true
           cd Content.Server
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
           git add .
-          git commit -m "Update compiled server from Civ14 - changed files only"
+          git commit -m "Update compiled server from Civ14"
           git push
