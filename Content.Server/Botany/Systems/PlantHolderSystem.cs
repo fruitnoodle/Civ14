@@ -25,6 +25,8 @@ using Robust.Shared.Timing;
 using Content.Server.Labels.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Weather;
+using Content.Server.Stack;
+using Content.Shared.Stacks;
 
 namespace Content.Server.Botany.Systems;
 
@@ -43,7 +45,7 @@ public sealed class PlantHolderSystem : EntitySystem
     [Dependency] private readonly RandomHelperSystem _randomHelper = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
-
+    [Dependency] private readonly StackSystem _stack = default!;
     public const float HydroponicsSpeedMultiplier = 1f;
     public const float HydroponicsConsumptionMultiplier = 2f;
     private ISawmill _sawmill = default!;
@@ -202,7 +204,22 @@ public sealed class PlantHolderSystem : EntitySystem
                 {
                     _itemSlots.TryEjectToHands(args.Used, paperLabel.LabelSlot, args.User);
                 }
-                QueueDel(args.Used);
+
+                if (TryComp<StackComponent>(args.Used, out var stack))
+                {
+                    //Not deleting whole stack piece will make troubles with grinding object
+                    if (stack.Count > 1)
+                    {
+                        _stack.SetCount(args.Used, stack.Count - 1);
+                        return;
+                    }
+                    else
+                    {
+                        QueueDel(args.Used);
+                    }
+                }
+                else { QueueDel(args.Used); }
+
 
                 CheckLevelSanity(uid, component);
                 UpdateSprite(uid, component);

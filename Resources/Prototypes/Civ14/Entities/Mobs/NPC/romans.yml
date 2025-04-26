@@ -283,7 +283,7 @@
   id: RomanInhandGladiusFriendly
   inhand:
     - civ13_sword_gladius
-    - civ13_shield_praetorian_roman_shield
+    - civ13_shield_roman_shield_blue
 
 - type: startingGear
   id: RomanInhandRangedFriendly
