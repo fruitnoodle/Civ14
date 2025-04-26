@@ -10617,6 +10617,62 @@
     - node: end
       entity: civ13_uniform_stola
 - type: construction
+  name: red tunic
+  id: civ13_uniform_red_tunic
+  graph: civ13_uniform_red_tunic
+  startNode: start
+  targetNode: end
+  category: construction-category-clothing
+  description: A red tunic.
+  icon:
+    sprite: Civ14/Clothing/exported/uniforms/red_tunic.rsi
+    state: icon
+  objectType: Item
+  agemin: 1
+  agemax: 8
+
+- type: constructionGraph
+  id: civ13_uniform_red_tunic
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: end
+          steps:
+            - material: Cloth
+              amount: 3
+              doAfter: 8
+    - node: end
+      entity: civ13_uniform_red_tunic
+- type: construction
+  name: blue tunic
+  id: civ13_uniform_blue_tunic
+  graph: civ13_uniform_blue_tunic
+  startNode: start
+  targetNode: end
+  category: construction-category-clothing
+  description: A blue tunic.
+  icon:
+    sprite: Civ14/Clothing/exported/uniforms/blue_tunic.rsi
+    state: icon
+  objectType: Item
+  agemin: 1
+  agemax: 8
+
+- type: constructionGraph
+  id: civ13_uniform_blue_tunic
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: end
+          steps:
+            - material: Cloth
+              amount: 3
+              doAfter: 8
+    - node: end
+      entity: civ13_uniform_blue_tunic
+- type: construction
   name: short loincloth
   id: civ13_uniform_short_loincloth
   graph: civ13_uniform_short_loincloth
