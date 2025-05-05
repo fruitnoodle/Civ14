@@ -20,6 +20,8 @@ using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization;
+using Content.Shared.Barricade;
+using Robust.Shared.Random;
 
 namespace Content.Shared.Projectiles;
 
@@ -38,7 +40,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly SharedGunSystem _guns = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
-
+    [Dependency] private readonly IRobustRandom _random = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -57,6 +59,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         if (args.OurFixtureId != ProjectileFixture || !args.OtherFixture.Hard
             || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true })
             return;
+
 
         ProjectileCollide((uid, component, args.OurBody), args.OtherEntity);
     }
@@ -118,7 +121,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         if (!deleted)
         {
             _guns.PlayImpactSound(target, modifiedDamage, component.SoundHit, component.ForceSound, filter, projectile);
-            _sharedCameraRecoil.KickCamera(target, direction);
+            //_sharedCameraRecoil.KickCamera(target, direction); # this makes people blind or something
         }
 
         component.DamagedEntity = true;
@@ -244,6 +247,14 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         if (component.IgnoreShooter && (args.OtherEntity == component.Shooter || args.OtherEntity == component.Weapon))
         {
             args.Cancelled = true;
+        }
+        //check for barricade component (percentage of chance to hit/pass over)
+        if (TryComp(args.OtherEntity, out BarricadeComponent? barricade))
+        {
+            if (_random.NextFloat(0.0f, 100.0f) <= barricade.Blocking)
+            {
+                args.Cancelled = true;
+            }
         }
     }
 
