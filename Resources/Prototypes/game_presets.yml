@@ -20,3 +20,5 @@
     - RespawnDeadRuleTDM
     - GracewallRule
     - CaptureAreaRule
+    - TeamDeathMatchRule
+

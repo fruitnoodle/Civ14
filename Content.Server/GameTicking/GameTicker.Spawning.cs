@@ -21,6 +21,9 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Robust.Shared.Timing;
+using Content.Server.GameTicking.Rules.Components;
+using Content.Shared.GameTicking.Components;
 
 namespace Content.Server.GameTicking
 {
@@ -149,9 +152,55 @@ namespace Content.Server.GameTicking
                     return;
             }
 
+            foreach (var tracker in EntityQuery<RespawnTrackerComponent>())
+            {
+                foreach (var (player1, time) in tracker.RespawnQueue)
+                {
+                    if (player1 == player.UserId)
+                    {
+                        if (_gameTiming.CurTime < time)
+                        {
+                            _chatManager.DispatchServerMessage(player,
+                                Loc.GetString("rule-respawn-blocked", ("seconds", time.TotalSeconds - _gameTiming.CurTime.TotalSeconds)));
+                            return;
+                        }
+                    }
+                }
+            }
+            //if TDM, check if the teams are balanced
+            var factionCount = GetPlayerFactionCounts();
+            if (factionCount != null && factionCount.Count > 1)
+            {
+                //get the faction of the selected job
+                if (jobId != null && _prototypeManager.TryIndex<JobPrototype>(jobId, out var job))
+                {
+                    var selectedFaction = job.Faction;
+                    var currentCount = 0;
+                    var minCount = 1000;
+                    foreach (var fact in factionCount)
+                    {
+                        if (fact.Key == selectedFaction)
+                        {
+                            currentCount = fact.Value;
+
+                        }
+                        else if (fact.Key != selectedFaction && fact.Value < minCount)
+                        {
+                            minCount = fact.Value;
+                        }
+                    }
+                    if (currentCount > minCount)
+                    {
+                        //if the current faction is greater than the minimum faction, block the respawn
+                        _chatManager.DispatchServerMessage(player,
+                            Loc.GetString("rule-respawn-autobalance", ("this", currentCount), ("other", minCount)));
+                        return;
+                    }
+                }
+
+            }
             SpawnPlayer(player, character, station, jobId, lateJoin, silent);
         }
-
         private void SpawnPlayer(ICommonSession player,
             HumanoidCharacterProfile character,
             EntityUid station,
@@ -430,7 +479,7 @@ namespace Content.Server.GameTicking
                 // Ideally engine would just spawn them on grid directly I guess? Right now grid traversal is handling it during
                 // update which means we need to add a hack somewhere around it.
                 var spawn = _robustRandom.Pick(_possiblePositions);
-                var toMap = spawn.ToMap(EntityManager, _transform);
+                var toMap = _transform.ToMapCoordinates(spawn);
 
                 if (_mapManager.TryFindGridAt(toMap, out var gridUid, out _))
                 {

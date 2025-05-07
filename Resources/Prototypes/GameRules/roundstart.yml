@@ -64,3 +64,15 @@
   id: CaptureAreaRule
   components:
     - type: CaptureAreaRule
+
+- type: entity
+  id: DeathMatchRule
+  parent: BaseGameRule
+  components:
+    - type: DeathMatchRule
+
+- type: entity
+  id: TeamDeathMatchRule
+  parent: BaseGameRule
+  components:
+    - type: TeamDeathMatchRule
