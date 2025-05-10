@@ -58,7 +58,7 @@ jobs:
           git config user.email "action@github.com"
           git add .
           # Check if there are staged changes. git diff exits 0 if no changes, 1 if changes.
-          if git diff --staged --quiet; then
+          if ! git diff --staged --quiet; then
             echo "No client changes to commit."
           else
             git commit -m "Update compiled client from Civ14"
@@ -74,7 +74,7 @@ jobs:
           git config user.email "action@github.com"
           git add .
           # Check if there are staged changes
-          if git diff --staged --quiet; then
+          if ! git diff --staged --quiet; then
             echo "No server changes to commit."
           else
             git commit -m "Update compiled server from Civ14"
