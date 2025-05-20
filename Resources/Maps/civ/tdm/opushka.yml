@@ -4,8 +4,8 @@ meta:
   engineVersion: 251.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/19/2025 18:35:10
-  entityCount: 1206
+  time: 05/20/2025 22:13:11
+  entityCount: 1213
 maps:
 - 1
 grids:
@@ -38,7 +38,10 @@ entities:
     - type: Broadphase
     - type: OccluderTree
     - type: CivResearch
-      researchLevel: 19.284668
+      isTDM: True
+      maxResearch: 600
+      researchLevel: 600
+      researchEnabled: False
     - type: FTLDestination
   - uid: 2
     components:
@@ -3541,69 +3544,106 @@ entities:
       removedMasks: 20
     - type: PlaceableSurface
       isPlaceable: True
+- proto: CrateWoodBarbedwire
+  entities:
+  - uid: 1140
+    components:
+    - type: Transform
+      pos: -30.5,19.5
+      parent: 2
+  - uid: 1141
+    components:
+    - type: Transform
+      pos: -30.5,18.5
+      parent: 2
+  - uid: 1142
+    components:
+    - type: Transform
+      pos: -30.5,17.5
+      parent: 2
+  - uid: 1143
+    components:
+    - type: Transform
+      pos: 77.5,18.5
+      parent: 2
+  - uid: 1144
+    components:
+    - type: Transform
+      pos: 77.5,17.5
+      parent: 2
+  - uid: 1207
+    components:
+    - type: Transform
+      pos: 77.5,19.5
+      parent: 2
+- proto: CrateWoodSandbags
+  entities:
+  - uid: 1134
+    components:
+    - type: Transform
+      pos: -30.5,22.5
+      parent: 2
+  - uid: 1135
+    components:
+    - type: Transform
+      pos: -30.5,23.5
+      parent: 2
+  - uid: 1136
+    components:
+    - type: Transform
+      pos: -30.5,24.5
+      parent: 2
+  - uid: 1137
+    components:
+    - type: Transform
+      pos: -31.5,24.5
+      parent: 2
+  - uid: 1138
+    components:
+    - type: Transform
+      pos: -31.5,23.5
+      parent: 2
+  - uid: 1139
+    components:
+    - type: Transform
+      pos: -31.5,22.5
+      parent: 2
+  - uid: 1208
+    components:
+    - type: Transform
+      pos: 77.5,24.5
+      parent: 2
+  - uid: 1209
+    components:
+    - type: Transform
+      pos: 77.5,23.5
+      parent: 2
+  - uid: 1210
+    components:
+    - type: Transform
+      pos: 77.5,22.5
+      parent: 2
+  - uid: 1211
+    components:
+    - type: Transform
+      pos: 78.5,22.5
+      parent: 2
+  - uid: 1212
+    components:
+    - type: Transform
+      pos: 78.5,23.5
+      parent: 2
+  - uid: 1213
+    components:
+    - type: Transform
+      pos: 78.5,24.5
+      parent: 2
 - proto: Dresser
   entities:
   - uid: 280
     components:
     - type: Transform
       pos: 22.5,14.5
-      parent: 2
-- proto: FlashlightLantern
-  entities:
-  - uid: 1134
-    components:
-    - type: Transform
-      pos: -24.639353,18.287933
-      parent: 2
-  - uid: 1135
-    components:
-    - type: Transform
-      pos: -24.561228,18.131683
-      parent: 2
-  - uid: 1136
-    components:
-    - type: Transform
-      pos: -24.467478,17.694183
-      parent: 2
-  - uid: 1137
-    components:
-    - type: Transform
-      pos: -24.467478,17.616058
-      parent: 2
-  - uid: 1138
-    components:
-    - type: Transform
-      pos: -24.670603,17.444183
-      parent: 2
-  - uid: 1139
-    components:
-    - type: Transform
-      pos: 75.33335,22.680456
-      parent: 2
-  - uid: 1140
-    components:
-    - type: Transform
-      pos: 75.473976,22.571081
-      parent: 2
-  - uid: 1141
-    components:
-    - type: Transform
-      pos: 75.598976,22.039831
-      parent: 2
-  - uid: 1142
-    components:
-    - type: Transform
-      pos: 75.58335,19.883934
-      parent: 2
-  - uid: 1143
-    components:
-    - type: Transform
-      pos: 75.52085,19.555809
-      parent: 2
-  - uid: 1144
-    components:
-    - type: Transform
-      pos: 75.2396,19.102684
       parent: 2
 - proto: FloraTreeStump
   entities:
@@ -8050,7 +8090,7 @@ entities:
       pos: 21.5,24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -11129.497
+      secondsUntilStateChange: -11252.765
       state: Opening
     - type: Godmode
       oldDamage: {}
@@ -8060,7 +8100,7 @@ entities:
       pos: 23.5,17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -14222.212
+      secondsUntilStateChange: -14345.4795
       state: Opening
     - type: Godmode
       oldDamage: {}
