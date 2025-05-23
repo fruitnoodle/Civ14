@@ -215,7 +215,7 @@ public sealed class CaptureAreaSystem : GameRuleSystem<CaptureAreaRuleComponent>
 
             //announce when theres 2 and 1 minutes left.
             var timeleft = area.CaptureDuration - area.CaptureTimer;
-            if (currentController != ruleComp.DefenderFactionName)
+            if (currentController != Faction2String(ruleComp.DefenderFactionName))
             {
                 if (timeleft <= 120 && area.CaptureTimerAnnouncement2 == false)
                 {

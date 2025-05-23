@@ -48,7 +48,7 @@ public sealed partial class GameMapPrototype : IPrototype
     /// If this map requires a specific preset
     /// </summary>
     [DataField("fixedPreset")]
-    public string FixedPreset { get; private set; } = "Nomads";
+    public string FixedPreset { get; private set; } = "";
 
     [DataField("stations", required: true)]
     private Dictionary<string, StationConfig> _stations = new();
