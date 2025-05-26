@@ -8555,23 +8555,6 @@ entities:
     - type: Transform
       pos: 26.508263,46.05315
       parent: 2
-- proto: LandMineCiv
-  entities:
-  - uid: 384
-    components:
-    - type: Transform
-      pos: -13.403467,9.933086
-      parent: 2
-  - uid: 387
-    components:
-    - type: Transform
-      pos: -12.965559,4.285555
-      parent: 2
-  - uid: 391
-    components:
-    - type: Transform
-      pos: -15.258289,35.163334
-      parent: 2
 - proto: LockerBooze
   entities:
   - uid: 1117

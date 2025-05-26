@@ -159,5 +159,5 @@
   components:
     - type: StorageFill
       contents:
-        - id: MortarAmmoBase
+        - id: MortarShellHE
           amount: 10
