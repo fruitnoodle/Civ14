@@ -17,8 +17,9 @@
         - type: NpcFactionMember
           factions:
             - US
-        - type: ShowUsFactionIcons
+        - type: ShowFactionIcons
           factionIcon: UsFaction
+          jobIcon: JobIconICpt
 
 - type: playTimeTracker
   id: JobUSCaptain
@@ -54,8 +55,10 @@
         - type: NpcFactionMember
           factions:
             - US
-        - type: ShowUsFactionIcons
+        - type: ShowFactionIcons
           factionIcon: UsFaction
+          jobIcon: JobIconISgt
+          assignSquad: true
 
 - type: playTimeTracker
   id: JobUSSergeant
@@ -91,8 +94,10 @@
         - type: NpcFactionMember
           factions:
             - US
-        - type: ShowUsFactionIcons
+        - type: ShowFactionIcons
           factionIcon: UsFaction
+          jobIcon: JobIconRifleman
+          assignSquad: true
 
 - type: playTimeTracker
   id: JobUSRifleman
@@ -142,8 +147,10 @@
         - type: NpcFactionMember
           factions:
             - US
-        - type: ShowUsFactionIcons
+        - type: ShowFactionIcons
           factionIcon: UsFaction
+          jobIcon: JobIconMg
+          assignSquad: true
 
 - type: playTimeTracker
   id: JobUSMachinegunner
@@ -192,8 +199,9 @@
         - type: NpcFactionMember
           factions:
             - US
-        - type: ShowUsFactionIcons
+        - type: ShowFactionIcons
           factionIcon: UsFaction
+          jobIcon: JobIconMedic
 
 - type: playTimeTracker
   id: JobUSMedic

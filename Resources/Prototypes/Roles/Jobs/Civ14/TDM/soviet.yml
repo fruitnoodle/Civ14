@@ -18,8 +18,10 @@
         - type: NpcFactionMember
           factions:
             - Soviet
-        - type: ShowSovietFactionIcons
+        - type: ShowFactionIcons
           factionIcon: SovietFaction
+          jobIcon: JobIconICpt
+          assignSquad: false
 
 - type: playTimeTracker
   id: JobSovietCaptain
@@ -56,8 +58,10 @@
         - type: NpcFactionMember
           factions:
             - Soviet
-        - type: ShowSovietFactionIcons
+        - type: ShowFactionIcons
           factionIcon: SovietFaction
+          jobIcon: JobIconISgt
+          assignSquad: true
 
 - type: playTimeTracker
   id: JobSovietSergeant
@@ -86,7 +90,7 @@
   playTimeTracker: JobSovietSubmachineGunner
   startingGear: SovietSubmachineGunnerGear
   randomStartingGears: [SovietSubmachineGunnerGear, SovietSubmachineGunnerGear2]
-  icon: "JobIconICpl"
+  icon: "JobIconSoldier"
   supervisors: job-supervisors-cpt
   special:
     - !type:AddComponentSpecial
@@ -95,8 +99,10 @@
         - type: NpcFactionMember
           factions:
             - Soviet
-        - type: ShowSovietFactionIcons
+        - type: ShowFactionIcons
           factionIcon: SovietFaction
+          jobIcon: JobIconRifleman
+          assignSquad: true
 
 - type: playTimeTracker
   id: JobSovietSubmachineGunner
@@ -138,7 +144,7 @@
   playTimeTracker: JobSovietRifleman
   startingGear: SovietRiflemanGear
   randomStartingGears: [SovietRiflemanGear, SovietRiflemanGear2]
-  icon: "JobIconICpl"
+  icon: "JobIconSoldier"
   supervisors: job-supervisors-cpt
   special:
     - !type:AddComponentSpecial
@@ -147,8 +153,10 @@
         - type: NpcFactionMember
           factions:
             - Soviet
-        - type: ShowSovietFactionIcons
+        - type: ShowFactionIcons
           factionIcon: SovietFaction
+          jobIcon: JobIconRifleman
+          assignSquad: true
 
 - type: playTimeTracker
   id: JobSovietRifleman
@@ -200,8 +208,10 @@
         - type: NpcFactionMember
           factions:
             - Soviet
-        - type: ShowSovietFactionIcons
+        - type: ShowFactionIcons
           factionIcon: SovietFaction
+          jobIcon: JobIconRifleman
+          assignSquad: true
 
 - type: playTimeTracker
   id: JobSovietMachinegunner
@@ -253,8 +263,10 @@
         - type: NpcFactionMember
           factions:
             - Soviet
-        - type: ShowSovietFactionIcons
+        - type: ShowFactionIcons
           factionIcon: SovietFaction
+          jobIcon: JobIconMedic
+          assignSquad: false
 
 - type: playTimeTracker
   id: JobSovietMedic
