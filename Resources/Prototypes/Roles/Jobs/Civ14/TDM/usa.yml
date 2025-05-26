@@ -33,6 +33,7 @@
     head: civ13_head_M1_Captain_Helmet
     belt: civ13_pistol_M1911A1
     pocket1: civ13_magazine_M1911_magazine_(.45)
+    pocket2: Compass
 
 # Sergeant
 
@@ -72,6 +73,7 @@
     head: civ13_head_M1_1st_LT_Helmet
     belt: civ13_pistol_M1911A1
     pocket1: civ13_magazine_M1911_magazine_(.45)
+    pocket2: Compass
   inhand:
     - civ13_ar_M16A2
 

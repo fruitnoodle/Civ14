@@ -36,6 +36,7 @@
     belt: civ13_pistol_Luger_P08
     head: civ13_head_German_officer_cap
     pocket1: FlashlightLanternMilitary
+    pocket2: Compass
 
 # Sergeant
 
@@ -76,7 +77,7 @@
     head: civ13_head_German_field_cap
     belt: civ13_pistol_Walther_P38
     pocket1: civ13_magazine_Walther_magazine
-    pocket2: FlashlightLanternMilitary
+    pocket2: Compass
   inhand:
     - civ13_boltaction_Karabiner_98k
 
