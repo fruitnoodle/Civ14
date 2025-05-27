@@ -49,18 +49,26 @@ public sealed class RequireProjectileTargetSystem : EntitySystem
         }
 
         var other = args.OtherEntity;
-        if (TryComp(other, out ProjectileComponent? projectile) &&
+        // Resolve the ProjectileComponent on the 'other' entity (the projectile)
+        if (TryComp(other, out ProjectileComponent? projectileComp) &&
             CompOrNull<TargetedProjectileComponent>(other)?.Target != ent)
         {
             // Prevents shooting out of while inside of crates
-            var shooter = projectile.Shooter;
+            var shooter = projectileComp.Shooter;
             if (!shooter.HasValue)
                 return;
 
             // ProjectileGrenades delete the entity that's shooting the projectile,
             // so it's impossible to check if the entity is in a container
             if (TerminatingOrDeleted(shooter.Value))
+            {
+                // If the shooter is deleted, nullify the reference in the projectile component
+                // to prevent network errors when serializing ProjectileComponent's state.
+                // This ensures that GetNetEntity won't be called on a deleted entity.
+                projectileComp.Shooter = null;
+                Dirty(other, projectileComp); // Mark the ProjectileComponent as dirty so the change is networked.
                 return;
+            }
 
             if (!_container.IsEntityOrParentInContainer(shooter.Value))
                 args.Cancelled = true;
