@@ -11,6 +11,12 @@
   startingGear: SovietCaptainGear
   icon: "JobIconICpt"
   supervisors: job-supervisors-nobody
+  ranks:
+    RankMajor:
+      - !type:RoleTimeRequirement
+        role: JobSovietCaptain
+        time: 18000 # 5 hours
+    RankCaptain: []
   special:
     - !type:AddComponentSpecial
       components:
@@ -22,9 +28,6 @@
           factionIcon: SovietFaction
           jobIcon: JobIconICpt
           assignSquad: false
-
-- type: playTimeTracker
-  id: JobSovietCaptain
 
 - type: startingGear
   id: SovietCaptainGear
@@ -51,6 +54,16 @@
   startingGear: SovietSergeantGear
   icon: "JobIconISgt"
   supervisors: job-supervisors-cpt
+  ranks:
+    RankSergeantMajor:
+      - !type:RoleTimeRequirement
+        role: JobSovietSergeant
+        time: 36000 # 10 hours
+    RankStaffSergeant:
+      - !type:RoleTimeRequirement
+        role: JobSovietSergeant
+        time: 10800 # 3 hours
+    RankSergeant: []
   special:
     - !type:AddComponentSpecial
       components:
@@ -62,9 +75,6 @@
           factionIcon: SovietFaction
           jobIcon: JobIconISgt
           assignSquad: true
-
-- type: playTimeTracker
-  id: JobSovietSergeant
 
 - type: startingGear
   id: SovietSergeantGear
@@ -92,6 +102,20 @@
   randomStartingGears: [SovietSubmachineGunnerGear, SovietSubmachineGunnerGear2]
   icon: "JobIconSoldier"
   supervisors: job-supervisors-cpt
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobSovietRifleman
+      time: 3600 # 1 hour
+  ranks:
+    RankLanceCorporal:
+      - !type:RoleTimeRequirement
+        role: JobSovietSubmachineGunner
+        time: 36000 # 10 hours
+    RankPrivateFirstClass:
+      - !type:RoleTimeRequirement
+        role: JobSovietSubmachineGunner
+        time: 10800 # 3 hours
+    RankPrivate: []
   special:
     - !type:AddComponentSpecial
       components:
@@ -103,9 +127,6 @@
           factionIcon: SovietFaction
           jobIcon: JobIconRifleman
           assignSquad: true
-
-- type: playTimeTracker
-  id: JobSovietSubmachineGunner
 
 - type: startingGear
   id: SovietSubmachineGunnerGear
@@ -146,6 +167,16 @@
   randomStartingGears: [SovietRiflemanGear, SovietRiflemanGear2]
   icon: "JobIconSoldier"
   supervisors: job-supervisors-cpt
+  ranks:
+    RankLanceCorporal:
+      - !type:RoleTimeRequirement
+        role: JobSovietRifleman
+        time: 36000 # 10 hours
+    RankPrivateFirstClass:
+      - !type:RoleTimeRequirement
+        role: JobSovietRifleman
+        time: 10800 # 3 hours
+    RankPrivate: []
   special:
     - !type:AddComponentSpecial
       components:
@@ -157,9 +188,6 @@
           factionIcon: SovietFaction
           jobIcon: JobIconRifleman
           assignSquad: true
-
-- type: playTimeTracker
-  id: JobSovietRifleman
 
 - type: startingGear
   id: SovietRiflemanGear
@@ -201,6 +229,20 @@
   randomStartingGears: [SovietMachinegunnerGear, SovietMachinegunnerGear2]
   icon: "JobIconMg"
   supervisors: job-supervisors-cpt
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobSovietRifleman
+      time: 3600 # 1 hour
+  ranks:
+    RankLanceCorporal:
+      - !type:RoleTimeRequirement
+        role: JobSovietMachinegunner
+        time: 36000 # 10 hours
+    RankPrivateFirstClass:
+      - !type:RoleTimeRequirement
+        role: JobSovietMachinegunner
+        time: 10800 # 3 hours
+    RankPrivate: []
   special:
     - !type:AddComponentSpecial
       components:
@@ -212,9 +254,6 @@
           factionIcon: SovietFaction
           jobIcon: JobIconRifleman
           assignSquad: true
-
-- type: playTimeTracker
-  id: JobSovietMachinegunner
 
 - type: startingGear
   id: SovietMachinegunnerGear
@@ -256,6 +295,12 @@
   startingGear: SovietMedicGear
   icon: "JobIconMedic"
   supervisors: job-supervisors-cpt
+  ranks:
+    RankSergeant:
+      - !type:RoleTimeRequirement
+        role: JobSovietMedic
+        time: 10800 # 3 hours
+    RankCorporal: []
   special:
     - !type:AddComponentSpecial
       components:
@@ -267,9 +312,6 @@
           factionIcon: SovietFaction
           jobIcon: JobIconMedic
           assignSquad: false
-
-- type: playTimeTracker
-  id: JobSovietMedic
 
 - type: startingGear
   id: SovietMedicGear

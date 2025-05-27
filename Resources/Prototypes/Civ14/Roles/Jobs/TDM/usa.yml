@@ -11,6 +11,12 @@
   startingGear: USCaptainGear
   icon: "JobIconICpt"
   supervisors: job-supervisors-nobody
+  ranks:
+    RankMajor:
+      - !type:RoleTimeRequirement
+        role: JobUSCaptain
+        time: 18000 # 5 hours
+    RankCaptain: []
   special:
     - !type:AddComponentSpecial
       components:
@@ -20,9 +26,6 @@
         - type: ShowFactionIcons
           factionIcon: UsFaction
           jobIcon: JobIconICpt
-
-- type: playTimeTracker
-  id: JobUSCaptain
 
 - type: startingGear
   id: USCaptainGear
@@ -51,6 +54,16 @@
   startingGear: USSergeantGear
   icon: "JobIconISgt"
   supervisors: job-supervisors-cpt
+  ranks:
+    RankSergeantMajor:
+      - !type:RoleTimeRequirement
+        role: JobUSSergeant
+        time: 36000 # 10 hours
+    RankStaffSergeant:
+      - !type:RoleTimeRequirement
+        role: JobUSSergeant
+        time: 10800 # 3 hours
+    RankSergeant: []
   special:
     - !type:AddComponentSpecial
       components:
@@ -61,9 +74,6 @@
           factionIcon: UsFaction
           jobIcon: JobIconISgt
           assignSquad: true
-
-- type: playTimeTracker
-  id: JobUSSergeant
 
 - type: startingGear
   id: USSergeantGear
@@ -92,6 +102,16 @@
   randomStartingGears: [USRiflemanGear, USRiflemanGear2]
   icon: "JobIconICpl"
   supervisors: job-supervisors-cpt
+  ranks:
+    RankLanceCorporal:
+      - !type:RoleTimeRequirement
+        role: JobUSRifleman
+        time: 36000 # 10 hours
+    RankPrivateFirstClass:
+      - !type:RoleTimeRequirement
+        role: JobUSRifleman
+        time: 10800 # 3 hours
+    RankPrivate: []
   special:
     - !type:AddComponentSpecial
       components:
@@ -102,9 +122,6 @@
           factionIcon: UsFaction
           jobIcon: JobIconRifleman
           assignSquad: true
-
-- type: playTimeTracker
-  id: JobUSRifleman
 
 - type: startingGear
   id: USRiflemanGear
@@ -147,6 +164,16 @@
   randomStartingGears: [USMachinegunnerGear, USMachinegunnerGear2]
   icon: "JobIconMg"
   supervisors: job-supervisors-cpt
+  ranks:
+    RankLanceCorporal:
+      - !type:RoleTimeRequirement
+        role: JobUSMachinegunner
+        time: 36000 # 10 hours
+    RankPrivateFirstClass:
+      - !type:RoleTimeRequirement
+        role: JobUSMachinegunner
+        time: 10800 # 3 hours
+    RankPrivate: []
   special:
     - !type:AddComponentSpecial
       components:
@@ -157,9 +184,6 @@
           factionIcon: UsFaction
           jobIcon: JobIconMg
           assignSquad: true
-
-- type: playTimeTracker
-  id: JobUSMachinegunner
 
 - type: startingGear
   id: USMachinegunnerGear
@@ -201,6 +225,12 @@
   startingGear: USMedicGear
   icon: "JobIconMedic"
   supervisors: job-supervisors-cpt
+  ranks:
+    RankSergeant:
+      - !type:RoleTimeRequirement
+        role: JobUSMedic
+        time: 10800 # 3 hours
+    RankCorporal: []
   special:
     - !type:AddComponentSpecial
       components:
@@ -210,9 +240,6 @@
         - type: ShowFactionIcons
           factionIcon: UsFaction
           jobIcon: JobIconMedic
-
-- type: playTimeTracker
-  id: JobUSMedic
 
 - type: startingGear
   id: USMedicGear

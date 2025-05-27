@@ -1,14 +1,14 @@
 - type: job
-  id: EnglishLord
-  name: job-name-civ-english-lord
-  faction: England
-  originalName: Lorde
-  description: job-description-civ-english-lord
-  playTimeTracker: JobEnglishLord
+  id: FrenchLord
+  name: job-name-civ-french-lord
+  faction: France
+  originalName: Seigneur
+  description: job-description-civ-french-lord
+  playTimeTracker: JobFrenchLord
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 10800 #3 hrs
-  startingGear: EnglishLordGear
+  startingGear: FrenchLordGear
   icon: "JobIconCommander"
   supervisors: job-supervisors-nobody
   special:
@@ -17,35 +17,31 @@
         - type: MedievalAccent
         - type: NpcFactionMember
           factions:
-            - England
+            - France
         - type: ShowFactionIcons
-          factionIcon: EnglishFaction
-
-- type: playTimeTracker
-  id: JobEnglishLord
+          factionIcon: FrenchFaction
 
 - type: startingGear
-  id: EnglishLordGear
+  id: FrenchLordGear
   equipment:
     shoes: civ13_shoes_leather_shoes_1
     outerClothing: civ13_suit_iron_chestplate
     jumpsuit: civ13_uniform_white_tunic_1
     belt: civ13_sword_arming_sword
     head: civ13_head_brown_noble_hat
-
 # Knight
 
 - type: job
-  id: EnglishKnight
-  originalName: Knyghte
-  name: job-name-civ-english-knight
-  faction: England
-  description: job-description-civ-english-knight
-  playTimeTracker: JobEnglishKnight
+  id: FrenchKnight
+  originalName: Chevalier
+  name: job-name-civ-french-knight
+  faction: France
+  description: job-description-civ-french-knight
+  playTimeTracker: JobFrenchKnight
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 5400 #1.5 hrs
-  startingGear: EnglishKnightGear
+  startingGear: FrenchKnightGear
   icon: "JobIconOfficer"
   supervisors: job-supervisors-lord
   special:
@@ -54,19 +50,16 @@
         - type: MedievalAccent
         - type: NpcFactionMember
           factions:
-            - England
+            - France
         - type: ShowFactionIcons
-          factionIcon: EnglishFaction
-
-- type: playTimeTracker
-  id: JobEnglishKnight
+          factionIcon: FrenchFaction
 
 - type: startingGear
-  id: EnglishKnightGear
+  id: FrenchKnightGear
   equipment:
     shoes: civ13_shoes_Sabatons
-    outerClothing: civ13_suit_red_plated_armor
-    jumpsuit: civ13_uniform_red_tunic
+    outerClothing: civ13_suit_blue_plated_armor
+    jumpsuit: civ13_uniform_blue_tunic
     head: civ13_head_knight_helmet
     gloves: civ13_gloves_armored_gauntlets
   inhand:
@@ -76,14 +69,14 @@
 # Swordsman
 
 - type: job
-  id: EnglishSwordsman
-  name: job-name-civ-english-man-at-arms
-  faction: England
-  originalName: Man-at-Armes
-  description: job-description-civ-english-man-at-arms
-  playTimeTracker: JobEnglishSwordsman
-  startingGear: EnglishSwordsmanGear
-  randomStartingGears: [EnglishSwordsmanGear, EnglishSwordsmanGear2]
+  id: FrenchSwordsman
+  originalName: Homme d'Armes
+  name: job-name-civ-french-man-at-arms
+  faction: France
+  description: job-description-civ-french-man-at-arms
+  playTimeTracker: JobFrenchSwordsman
+  startingGear: FrenchSwordsmanGear
+  randomStartingGears: [FrenchSwordsmanGear, FrenchSwordsmanGear2]
   icon: "JobIconSword"
   supervisors: job-supervisors-lord
   special:
@@ -92,46 +85,43 @@
         - type: MedievalAccent
         - type: NpcFactionMember
           factions:
-            - England
+            - France
         - type: ShowFactionIcons
-          factionIcon: EnglishFaction
-
-- type: playTimeTracker
-  id: JobEnglishSwordsman
+          factionIcon: FrenchFaction
 
 - type: startingGear
-  id: EnglishSwordsmanGear
+  id: FrenchSwordsmanGear
   equipment:
     shoes: civ13_shoes_leather_shoes_1
     outerClothing: civ13_suit_chainmail
-    neck: civ13_accessory_tabard_red_yellow
-    jumpsuit: civ13_uniform_yellow_red_tunic
+    neck: civ13_accessory_tabard_blue_white
+    jumpsuit: civ13_uniform_blue_white_tunic
     head: civ13_head_kettle_helmet
   inhand:
     - civ13_sword_arming_sword
-    - WoodenBucklerRed
+    - WoodenBucklerBlue
 - type: startingGear
-  id: EnglishSwordsmanGear2
+  id: FrenchSwordsmanGear2
   equipment:
     shoes: civ13_shoes_leather_shoes_1
     outerClothing: civ13_suit_chainmail
-    neck: civ13_accessory_tabard_red
-    jumpsuit: civ13_uniform_red_tunic
+    neck: civ13_accessory_tabard_blue
+    jumpsuit: civ13_uniform_blue_tunic
     head: civ13_head_kettle_helmet
   inhand:
     - civ13_sword_arming_sword
-    - WoodenBucklerRed
+    - WoodenBucklerBlue
 # Spearman
 
 - type: job
-  id: EnglishSpearman
-  name: job-name-civ-english-spearman
-  faction: England
-  originalName: Spereman
-  description: job-description-civ-english-spearman
-  playTimeTracker: JobEnglishSpearman
-  startingGear: EnglishSpearmanGear
-  randomStartingGears: [EnglishSpearmanGear, EnglishSpearmanGear2]
+  id: FrenchSpearman
+  originalName: Piquier
+  name: job-name-civ-french-spearman
+  faction: France
+  description: job-description-civ-french-spearman
+  playTimeTracker: JobFrenchSpearman
+  startingGear: FrenchSpearmanGear
+  randomStartingGears: [FrenchSpearmanGear, FrenchSpearmanGear2]
   icon: "JobIconSpear"
   supervisors: job-supervisors-lord
   special:
@@ -140,46 +130,44 @@
         - type: MedievalAccent
         - type: NpcFactionMember
           factions:
-            - England
+            - France
         - type: ShowFactionIcons
-          factionIcon: EnglishFaction
-
-- type: playTimeTracker
-  id: JobEnglishSpearman
+          factionIcon: FrenchFaction
 
 - type: startingGear
-  id: EnglishSpearmanGear
+  id: FrenchSpearmanGear
   equipment:
     shoes: civ13_shoes_leather_shoes_1
     outerClothing: civ13_suit_gambeson
-    neck: civ13_accessory_tabard_red
-    jumpsuit: civ13_uniform_red_tunic
+    neck: civ13_accessory_tabard_blue_white
+    jumpsuit: civ13_uniform_blue_white_tunic
     head: civ13_head_protective_conical_helmet
   inhand:
     - civ13_spear_pike
-    - WoodenBucklerRed
+    - WoodenBucklerBlue
+
 - type: startingGear
-  id: EnglishSpearmanGear2
+  id: FrenchSpearmanGear2
   equipment:
     shoes: civ13_shoes_leather_shoes_1
     outerClothing: civ13_suit_gambeson
-    neck: civ13_accessory_tabard_red_yellow
-    jumpsuit: civ13_uniform_yellow_red_tunic
+    neck: civ13_accessory_tabard_blue
+    jumpsuit: civ13_uniform_blue_tunic
     head: civ13_head_protective_conical_helmet
   inhand:
     - civ13_spear_pike
-    - WoodenBucklerRed
+    - WoodenBucklerBlue
 # Ranged
 
 - type: job
-  id: EnglishRanged
-  name: job-name-civ-english-ranged
-  faction: England
-  originalName: Longe Boweman
-  description: job-description-civ-english-ranged
-  playTimeTracker: JobEnglishRanged
-  startingGear: EnglishRangedGear
-  randomStartingGears: [EnglishRangedGear, EnglishRangedGear2]
+  id: FrenchRanged
+  originalName: Archer
+  name: job-name-civ-french-ranged
+  faction: France
+  description: job-description-civ-french-ranged
+  playTimeTracker: JobFrenchRanged
+  startingGear: FrenchRangedGear
+  randomStartingGears: [FrenchRangedGear, FrenchRangedGear2]
   icon: "JobIconRanged"
   supervisors: job-supervisors-lord
   special:
@@ -188,24 +176,21 @@
         - type: MedievalAccent
         - type: NpcFactionMember
           factions:
-            - England
+            - France
         - type: ShowFactionIcons
-          factionIcon: EnglishFaction
-
-- type: playTimeTracker
-  id: JobEnglishRanged
+          factionIcon: FrenchFaction
 
 - type: startingGear
-  id: EnglishRangedGear
+  id: FrenchRangedGear
   equipment:
     shoes: civ13_shoes_leather_shoes_1
     outerClothing: civ13_suit_gambeson
-    jumpsuit: civ13_uniform_red_tunic
-    neck: civ13_accessory_tabard_red
+    neck: civ13_accessory_tabard_blue_white
+    jumpsuit: civ13_uniform_blue_white_tunic
     head: civ13_head_conical_helmet
     belt: ClothingBeltQuiver
     pocket1: SwordDagger
-    back: WoodenBucklerRed
+    back: WoodenBucklerBlue
   inhand:
     - BowImprovised
   storage:
@@ -219,16 +204,16 @@
       - ArrowIron
       - ArrowIron
 - type: startingGear
-  id: EnglishRangedGear2
+  id: FrenchRangedGear2
   equipment:
     shoes: civ13_shoes_leather_shoes_1
     outerClothing: civ13_suit_gambeson
-    neck: civ13_accessory_tabard_red_yellow
-    jumpsuit: civ13_uniform_red_tunic
+    neck: civ13_accessory_tabard_blue
+    jumpsuit: civ13_uniform_blue_tunic
     head: civ13_head_kettle_helmet
     belt: ClothingBeltQuiver
     pocket1: SwordDagger
-    back: WoodenBucklerRed
+    back: WoodenBucklerBlue
   inhand:
     - BowImprovised
   storage:
@@ -248,13 +233,13 @@
 # Medic
 
 - type: job
-  id: EnglishMedic
-  name: job-name-civ-english-medic
-  faction: England
-  originalName: Monk
-  description: job-description-civ-english-medic
-  playTimeTracker: JobEnglishMedic
-  startingGear: EnglishMedicGear
+  id: FrenchMedic
+  name: job-name-civ-french-medic
+  faction: France
+  originalName: Moine
+  description: job-description-civ-french-medic
+  playTimeTracker: JobFrenchMedic
+  startingGear: FrenchMedicGear
   icon: "JobIconMedic"
   supervisors: job-supervisors-lord
   special:
@@ -263,15 +248,12 @@
         - type: MedievalAccent
         - type: NpcFactionMember
           factions:
-            - England
+            - France
         - type: ShowFactionIcons
-          factionIcon: EnglishFaction
-
-- type: playTimeTracker
-  id: JobEnglishMedic
+          factionIcon: FrenchFaction
 
 - type: startingGear
-  id: EnglishMedicGear
+  id: FrenchMedicGear
   equipment:
     shoes: civ13_shoes_leather_shoes_1
     outerClothing: civ13_suit_monk_robes
