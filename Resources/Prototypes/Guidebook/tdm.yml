@@ -1,1 +1,27 @@
+- type: guideEntry
+  id: Tdm
+  name: guide-entry-tdm
+  priority: 0
+  text: "/ServerInfo/Guidebook/Tdm/Tdm.xml"
+  children:
+    - TdmStarterGuide
+    - TdmMaps
+    - TdmCombat
 
+- type: guideEntry
+  id: NomadsStarterGuide
+  name: guide-entry-nomads-starterguide
+  priority: 1
+  text: "/ServerInfo/Guidebook/Tdm/TdmGuide.xml"
+
+- type: guideEntry
+  id: TdmMaps
+  name: guide-entry-nomads-farming
+  priority: 2
+  text: "/ServerInfo/Guidebook/Tdm/TdmMaps.xml"
+
+- type: guideEntry
+  id: TdmCombat
+  name: guide-entry-nomads-metallurgy
+  priority: 3
+  text: "/ServerInfo/Guidebook/Tdm/TdmCombat.xml"
